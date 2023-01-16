@@ -12,8 +12,8 @@ function App(props) {
         <Title title="Login" />
         <Input label="Usuário" />
         <Input label="Senha" />
-        <Button button="Login" />
-        <Link link="Esqueceu a senha?" />
+        <Button href="https://discord.gg/acrskNxB" button="Login" />
+        <Link href="https://www.google.com/" link="Esqueceu a senha?" />
       </div>
     </div>
   );

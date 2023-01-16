@@ -6,7 +6,7 @@ function Button(props) {
       <button className="btn btn-light btn-lg">
         <a
           className="text-decoration-none text-dark p-3"
-          href="https://discord.gg/acrskNxB"
+          href={props.href}
         >
           {props.button}
         </a>
