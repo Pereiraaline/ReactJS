@@ -1,21 +1,17 @@
-import './App.css';
-import Title from './components/Title/indexTitle';
-import Input from './components/Input/indexInput';
-import Button from './components/Button/indexButton';
-import Link from './components/Link/indexLink';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Login from "./pages/login/indexLogin";
+import Home from "./pages/home/indexHome"
 
 function App(props) {
   return (
-    <div className="container-fluid d-flex flex-column justify-content-center align-items-center p-5">
-      <div className="card text-bg-dark mt-5 w-50 p-3 opacity-80 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-        <Title title="Login" />
-        <Input label="Usuário" />
-        <Input label="Senha" />
-        <Button href="https://discord.gg/acrskNxB" button="Login" />
-        <Link href="https://www.google.com/" link="Esqueceu a senha?" />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
