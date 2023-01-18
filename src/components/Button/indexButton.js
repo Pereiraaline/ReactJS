@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Button(props) {
+const Button = ({button, redirecionar}) => {
   return (
     <div>
-      <button className="btn btn-light" onClick={props.redirecionar}>
-        {props.button}
+      <button className="btn btn-light" onClick={redirecionar}>
+        {button}
       </button>
     </div>
   );

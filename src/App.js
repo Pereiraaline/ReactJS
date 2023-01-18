@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./pages/login/indexLogin";
 import Home from "./pages/home/indexHome"
 
-function App(props) {
+const App = (props) => {
   return (
     <Router>
       <Routes>
