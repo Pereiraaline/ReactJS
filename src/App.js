@@ -6,7 +6,7 @@ import Home from "./pages/home/indexHome"
 
 const App = (props) => {
   return (
-    <Router>
+    <Router >
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/home" element={<Home />}></Route>

@@ -1,12 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import {PropTypes} from "prop-types";
 
-const Button = ({title, redirecionar, bgColor, color}) => {
+const Button = ({title, onClick, bgColor, color, width}) => {
   return (
     <div>
-      <button className="btn" 
-              style={{backgroundColor: bgColor, color}}
-              onClick={redirecionar}>
+      <button
+        className="btn mb-3 w-100"
+        style={({ backgroundColor: bgColor, color })}
+        onClick={onClick}
+      >
         {title}
       </button>
     </div>
@@ -15,11 +17,11 @@ const Button = ({title, redirecionar, bgColor, color}) => {
 
 Button.propTypes = {
   title: PropTypes.string,
-  redirecionar: PropTypes.func,
+  onClick: PropTypes.func,
 }
 
 Button.defaultProps = {
-  bgColor: "#fff",
-  color: "#000"
-}
+  bgColor: "#000",
+  color: "#fff",
+};
 export default Button;
