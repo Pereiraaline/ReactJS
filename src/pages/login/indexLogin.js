@@ -18,7 +18,7 @@ return (
       <Title title="Login" />
       <Input label="Usuário" />
       <Input label="Senha" />
-      <Button button="Entrar" redirecionar={vaPraHome} />
+      <Button title="Entrar" redirecionar={vaPraHome} />
       <Link href="https://www.google.com/" link="Esqueceu a senha?" />
     </div>
   </div>

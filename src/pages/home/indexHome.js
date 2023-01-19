@@ -20,15 +20,11 @@ const Home = () => {
            <i class="bi bi-book"></i>
          </span>
        </h2>
-       <Button button="Sair" redirecionar={sair} />
+       <Button title="Sair" redirecionar={sair} />
      </div>
-     <img className="img-fluid rounded mx-auto d-block mt-20" src={Gif} />
+     <img className="img-fluid rounded mx-auto d-block mt-20" src={Gif} alt="" />
      <h4 className="text-dark fw-light text-center mt-5">
-       OOOPS
-       <span className="fw-semibold fst-italic text-secondary">
-         {" "}
-         Algo deu errado :/
-       </span>
+       OOOPS<span className="fw-semibold fst-italic text-secondary"> Algo deu errado :/</span>
        <span class="fw-light display-7 text-light">
          <i class="bi bi-book"></i>
        </span>
