@@ -1,20 +1,17 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
 import {PropTypes} from "prop-types";
 
 
 const Input = ({label, value, onChange, type, color}) => {
 
  return (
-   <div className="mb-3">
+   <div className="container-input">
      <label
-       className="form-label bg-whithe"
-       for="input"
        style={{ color: color }}
      >
        {label}
      </label>
      <input
-       className="form-control border-bottom"
        type={type}
        value={value}
        onChange={onChange}
@@ -31,7 +28,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  color: "#000",
+  color: "#808080",
 }
 
 export default Input;

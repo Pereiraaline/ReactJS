@@ -1,0 +1,26 @@
+
+.container-home{
+  margin: 0.5rem auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 50vw;
+  gap: 1rem;
+}
+
+.container-home h3{
+    font-size: large;
+    color:  #262626;
+}
+
+.container-home ul{
+    list-style: none;
+    font-size: large;
+}
+
+.container-home img{
+    align-self: center;
+    width: 350px;
+    height: 350px;
+    opacity: 0.9;
+}

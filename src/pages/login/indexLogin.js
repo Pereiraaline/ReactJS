@@ -1,33 +1,40 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
 import Title from "../../components/Title/indexTitle";
 import Input from "../../components/Input/indexInput";
 import Button from "../../components/Button/indexButton";
 import Link from "../../components/Link/indexLink";
+import Subtitle from "../../components/Subtitle/indexSubtitle";
+
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Subtitle from "../../components/Subtitle/indexSubtitle";
 
 const Login = () => {
   // const [listaUsuarios, setListaUsuarios] = useState("");
-  const [usuarios, setUsuarios] = useState([
+  const [usuarios] = useState([
     {
+      id: 1,
+      nome: "João",
       email: "joao@email",
       senha: "oidevs",
     },
     {
+      id: 2,
+      nome: "Jady",
       email: "jady@email",
       senha: "oidevs",
     },
     {
+      id: 3,
+      nome: "Raniel",
       email: "raniel@email",
-      senha: "caneta",
+      senha: "oidevs",
     },
   ]);
 
   const navigate = useNavigate();
   const [title, setTitle] = useState("Login");
   const [showError, setShowError] = useState(false);
-  const [colorInput, setColorInput] = useState(false);
+  const [colorInput, setColorInput] = useState("");
 
   //valor input usuario
   const [nomeUsuario, setNomeUsuario] = useState("");
@@ -36,14 +43,15 @@ const Login = () => {
   const [senha, setSenha] = useState("");
 
   const vaPraHome = () => {
-    const usuarioEscolhido = usuarios.find(usuario => usuario.email === nomeUsuario && usuario.senha === senha);
+    const usuarioEscolhido = usuarios.find(
+      (usuario) => usuario.email === nomeUsuario && usuario.senha === senha
+    );
 
-    if(usuarioEscolhido){
-      navigate("/home");
-
-    }else{
-      setShowError(true)
-      mudarColorInput(true)
+    if (usuarioEscolhido) {
+      navigate("/home", { state: {listaUsuarios: usuarios}});
+    } else {
+      setShowError(true);
+      mudarColorInput("red");
     }
   };
 
@@ -52,12 +60,12 @@ const Login = () => {
   };
 
   const mudarColorInput = () => {
-    setColorInput("red")
-  }
+    setColorInput("red");
+  };
 
   return (
-    <div className="container-fluid d-flex flex-column justify-content-center align-items-center p-5 w-100 h-100">
-      <div className="card text-dark bg-body-secondary mt-5 w-50 p-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <div className="container">
+      <div className="container-login">
         <Title title={title} />
         {showError ? <Subtitle text="Credenciais Inválidas" /> : null}
         <Input
@@ -67,7 +75,6 @@ const Login = () => {
           value={nomeUsuario}
           onChange={(e) => setNomeUsuario(e.target.value)}
         />
-        {colorInput ? true : null}
         <Input
           label="Senha"
           color={colorInput}
@@ -75,7 +82,12 @@ const Login = () => {
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
         />
-        <Button title="Entrar" onClick={vaPraHome} />
+        <Button
+          title="Entrar"
+          onClick={vaPraHome}
+          bgColor="#f54018c9"
+          color="#262626"
+        />
         <Button
           title="Trocar Título"
           onClick={mudarTitulo}

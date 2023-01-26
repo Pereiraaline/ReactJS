@@ -1,11 +1,11 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
 import {PropTypes} from "prop-types";
 
 const Button = ({title, onClick, bgColor, color, width}) => {
   return (
     <div>
       <button
-        className="btn mb-3 w-100"
+        className="button"
         style={({ backgroundColor: bgColor, color })}
         onClick={onClick}
       >
@@ -21,7 +21,8 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  bgColor: "#000",
+  bgColor: "#262626",
   color: "#fff",
 };
+
 export default Button;
