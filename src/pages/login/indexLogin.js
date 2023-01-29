@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Login = () => {
-  // const [listaUsuarios, setListaUsuarios] = useState("");
   const [usuarios] = useState([
     {
       id: 1,
@@ -48,7 +47,7 @@ const Login = () => {
     );
 
     if (usuarioEscolhido) {
-      navigate("/home", { state: {listaUsuarios: usuarios}});
+      navigate("/home", { state: {listaUsuarios: usuarios, nomeUsuario: usuarioEscolhido.nome}});
     } else {
       setShowError(true);
       mudarColorInput("red");
@@ -85,13 +84,13 @@ const Login = () => {
         <Button
           title="Entrar"
           onClick={vaPraHome}
-          bgColor="#f54018c9"
+          bgColor="#506f81"
           color="#262626"
         />
         <Button
           title="Trocar Título"
           onClick={mudarTitulo}
-          bgColor="gray"
+          bgColor="#9cb2af"
           color="#000"
         />
         <Link href="https://www.google.com/" link="Esqueceu a senha?" />
